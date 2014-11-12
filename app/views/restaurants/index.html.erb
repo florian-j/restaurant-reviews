@@ -1,0 +1,6 @@
+<h1>Liste des restaurants</h1>
+<!-- <p>Find me in app/views/restaurants/index.html.erb</p> -->
+<ul><% @restaurants.each do |restaurant| %>
+  <li><h2><%="#{restaurant.name} #{restaurant.address} #{restaurant.category}"%></h2></li>
+    <% end %>
+</ul>
