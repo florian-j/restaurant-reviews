@@ -1,6 +1,6 @@
-<%= form_for(@restaurant) do |f| %>
+<%= form_for(@restaurant, html: { multipart: true }) do |f| %>
 
-  <% if @restaurant.errors.any? %>
+<% if @restaurant.errors.any? %>
     <div id="error_explanation">
       <ul>
       <% @restaurant.errors.full_messages.each do |message| %>
@@ -10,7 +10,6 @@
     </div>
   <% end %>
 
-
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.label :address %>
@@ -19,5 +18,10 @@
   <%= f.text_field :phonenumber %>
   <%= f.label :category %>
   <%= f.text_field :category %>
+  <p>
+    <%= f.label :picture %>
+    <%= f.file_field :picture %>
+  </p>
+
   <%= f.submit %>
 <% end %>
